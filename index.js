@@ -21,8 +21,10 @@ app.get('/:time', function (req, res) {
         dataToSend.unix = moment(req.params.time, 'MMMM D, YYYY').format('X');
         res.end(JSON.stringify(dataToSend));
     }
-})
-
+});
+app.get('/', function (req, res) {
+    res.end('send something');
+});
 app.listen(4000, function (err) {
     if(err)console.log(err);
     console.log("app listening on port 4000");
